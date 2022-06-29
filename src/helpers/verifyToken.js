@@ -5,12 +5,12 @@ const verifyToken = {
     try {
       const token = localStorage.getItem('token');
       const decode = jwt_decode(token);
-      if (decode.expires <= Date.now()) {
+      if (decode.exp*1000 <= Date.now()) {
         alert('faça login para continuar');
         localStorage.setItem('token', '');
         return false;
       }
-      return token
+      return true
     } catch(e) {
       localStorage.setItem('token', '');
       return false;
@@ -22,7 +22,7 @@ const verifyToken = {
       alert('faça login para continuar');
       return false;
     }
-    return token
+    return true
   }
 }
 
