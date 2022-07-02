@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Tasks APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta pasta foi criada com o intuíto de abrigar o código referente ao front-end do projeto.
+Para a construção do mesmo, foi usado: JavaScript, React.JS, React-Router, Context.
 
-## Available Scripts
+## Para a execução do código, é necessário
+  - node v16;
 
-In the project directory, you can run:
+## Para iniciar
+  - na raiz do projeto execute o comando 
+    ```npm install```
+  - rode o comando
+    ```npm start```
+  - a aplicação será iniciada na porta 3000 da sua máquina (é muito importante que você já tenha inicado a sua API)
 
-### `npm start`
+## Documentação do APP
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Login
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```no primeiro login basta inserir usuário e senha, nos próximos logins, será verificado se a senha é compatível com a do usuário cadastrado```
 
-### `npm test`
+O botão de login só será habilitado após inserir um usuário válido (mais de 3 dígitos) e uma senha válida (mais de 6 digitos)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Quando o login for realizado com sucesso, você será redirecionado para a rota aonde é possível verificar suas tarefas e inserir novos dados.
 
-### `npm run build`
+Para sua segurança, é necessário realizar um novo login a cada 12 horas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tela de Tarefas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`Inserir Tarefas`
+Na parte superior da tela, é possível inserir novas tarefas. Basta inserir o texto da sua próxima ativida e escolher o seu status e em seguida clicar no botão criar.
+Pronto, sua primeira tarefa foi criada com sucesso, agora é só continuar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`Visualizar Tarefas`
+Assim que a página carregar, você será capaz de ver todas as tarefas já inseridas (caso existem).
+Na tela, é possível visualizar o conteúdo da tarefa, o seu statos, e dois botões um para editar e outro para deletar a tarefa;
 
-### `npm run eject`
+`Editar Tarefas`
+Ao clicar no botão azul de editar, o formulário utilizado para inserir tarefa, será automaticamente preenchido com os dados da tarefa selecionada, em seguida é só realizar as alterações desejada e salvar as alterações clicando no botão para editar.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`Deletar Tarefas`
+Para deletar uma tarefa, basta clicar no botão identificado com uma lixeira vermelha.
+```*ATENÇÃO: ESSA OPERAÇÃO NÃO PODE SER DESFEITA*```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Alguma dúvida?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- LinkedIn: [Marina Fischer](https://www.linkedin.com/in/marina-miranda-fischer/)
