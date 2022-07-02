@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import postUser from '../services/login';
+import '../styles/Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -32,25 +33,31 @@ const Login = () => {
 
   return(
     <>
-      <div className="mainLogin">
-        <h1>Faça login para ver sua lista de tarefas</h1>
-        <form className="formLogin" onSubmit={ handleSubmit }>
+      <div className="Main_Login">
+        <form className="Form_Fild" onSubmit={ handleSubmit }>
+        <h1 className="Login_Title">Faça login para ver sua lista de tarefas</h1>
           {
             error && <span>Dados inválidos</span>
           }
-          <input 
+          <input
+            className="Login_Input" 
             type="text"
             name ="user"
             placeholder="usuário"
             onChange={(e) => setUser(e.target.value)}
           />
-          <input 
+          <input
+            className="Login_Input"
             type="password"
             name ="senha"
             placeholder="senha"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit" disabled={ disabled }>
+          <button
+            className="Login_Button"
+            type="submit"
+            disabled={ disabled }
+          >
             Entrar
           </button>
         </form>
