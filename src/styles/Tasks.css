@@ -1,0 +1,125 @@
+.Task_Form{
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5% auto;
+  width: 50%;
+}
+
+.Task_Input{
+  background-color: var(--bs-color02);
+  border: none;
+  border-radius: 8px;
+  color: var(--bs-text01);
+  font-size: 20px;
+  height: 35px;
+  margin-left: 5px;
+  padding: 4px;
+}
+
+.Task_Input:focus {
+  background-color: var(--bs-color02);
+  box-shadow: 0 0 0 0;
+  border: 2px solid var(--bs-color01);
+  outline: 0;
+}
+
+.Create_Button{
+  border: var(--bs-color03);
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px var(--bs-text01);
+  color: var(--bs-text01);
+  font-size: 20px;
+  height: 35px;
+  width: 90px;
+}
+
+.post{
+  background-color: var(--bs-color03);
+}
+
+.put{
+  background-color: var(--bs-color01);
+  height: 50px;
+}
+
+.Create_Button:disabled{
+  opacity: 0.4;
+}
+
+.Create_Button:hover{
+  cursor: pointer;
+}
+
+.Status_Select{
+  background-color: var(--bs-color02);
+  border: none;
+  border-radius: 8px;
+  color: var(--bs-text01);
+  font-size: 20px;
+  height: 35px;
+  margin-left: 5px;
+  padding: 5px;
+}
+
+.Status_Select:focus {
+  background-color: var(--bs-color02);
+  border: 2px solid var(--bs-color01);
+  outline: 0;
+}
+
+.No_Contet{
+  color: var(--bs-color01);
+  font-size: 30px;
+  margin: 5% auto;
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+}
+
+.Tasks_List{
+  margin: auto;
+  padding-inline-start: 0px;
+  width: 90%;
+}
+
+.Task_Item {
+  align-items: center;
+  display: flex;
+  /* width: 90%; */
+  margin: auto;
+}
+
+.Task_Item .Title {
+  color: var(--bs-color01);
+}
+
+.Task_container{
+  width: 25%;
+}
+
+.content {
+  width: 40%;
+  margin-left: 10%;
+}
+
+.Task_Content{
+  color: var(--bs-text01);
+  font-size: 20px;
+  padding-right: 5px;
+}
+
+.Action_button{
+  border: none;  
+  cursor: pointer;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.Edit{
+  color: rgb(75, 148, 197);
+}
+
+.Delete {
+  color: rgb(197, 75, 75);
+}

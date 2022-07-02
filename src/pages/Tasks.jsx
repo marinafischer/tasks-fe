@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { RiDeleteBin2Fill, RiEditBoxFill } from 'react-icons/ri';
+import '../styles/Tasks.css'
 import verifyToken from '../helpers/verifyToken';
 import getTasks from '../services/getTasks';
 import deleteTask from '../services/deleteTasks';
@@ -49,10 +51,17 @@ const Tasks = () => {
   }, [task]);
 
   const editTask = (data) => {
-    setType('put')
-    setId(data.id)
-    setTask(data.content)
-    setStatus(data.status)
+    if(type === 'post') {
+      setType('put')
+      setId(data.id);
+      setTask(data.content);
+      setStatus(data.status);
+    } else {
+      setType('post')
+      setId();
+      setTask('');
+      setStatus(1);
+    }
   }
 
   const delTask = async (taskId) => {
@@ -76,20 +85,25 @@ const Tasks = () => {
   
   return(
     <>
-      <form>
-        <input 
+      <form className="Task_Form">
+        <input
+            className="Task_Input" 
             type="text"
             name ="task"
             placeholder="digite sua tarefa"
             onChange={(e)=>setTask(e.target.value)}
             value={task}
         />
-        <select onChange={(e)=> setStatus(e.target.value)}>
-          <option value="1">Criada</option>
+        <select 
+          className="Status_Select"
+          onChange={(e)=> setStatus(e.target.value)}
+        >
+          <option value="1" className="Status_Option">Criada</option>
           <option value="2">Iniciada</option>
           <option value="3">Finalizada</option>
         </select>
         <button 
+          className={`Create_Button ${type}`}
           type="button"
           disabled={ disabled }
           value={type}
@@ -98,26 +112,61 @@ const Tasks = () => {
           {type === 'post' ? 'CRIAR':'EDITAR'}
         </button>
       </form>
-      <ul>
+      {
+        tasks.length === 0 ? 
+        <div className="No_Contet"> 
+          Você não possui tarefas no momento 
+        </div> :
+        <ul className="Tasks_List">
+        <li className="Task_Item">
+          <div className="Task_container content">
+            <h4 className="Task_Content Title">
+              TAREFA
+            </h4>
+          </div>
+          <div className="Task_container">
+            <h4 className="Task_Content Title">
+              STATUS
+            </h4> 
+          </div>
+          <div className="Task_container">
+            <h4 className="Task_Content Title">
+              AÇÕES
+            </h4> 
+          </div>
+        </li>
         {
           tasks.map(task =>(
-            <li key={task.id}>
-              <h4>
-                {task.content}
-              </h4>
-              <h5>
-               {tasksStatus(task.status)}
-              </h5>
-              <button onClick={()=> editTask(task)}>
-                editar
-              </button>
-              <button onClick={()=> delTask(task.id)}>
-                deletar
-              </button>
+            <li key={task.id} className="Task_Item">
+              <div className="Task_container content">
+                <h4 className="Task_Content">
+                  {task.content}
+                </h4>
+              </div>
+              <div className="Task_container">
+                <h4 className="Task_Content">
+                {tasksStatus(task.status)}
+                </h4>
+              </div>
+              <div className="Task_container">
+                <button 
+                  className="Action_button Edit"
+                  onClick={()=> editTask(task)}
+                >
+                  <RiEditBoxFill />
+                </button>
+                <button 
+                  className="Action_button Delete"
+                  onClick={()=> delTask(task.id)}
+                >
+                  <RiDeleteBin2Fill />
+                </button>
+              </div>
             </li>
           ))
         }
       </ul>
+      }
     </>
   )
 }
